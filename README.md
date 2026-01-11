@@ -8,7 +8,7 @@ This is a personal side-project from me and keeps **all control in lane 0** (no 
 
 ## Quickstart (Colab)
 
-1. Open `demo.ipynb` in Colab  (recommend to use v6e-1 TPU since it's tested on there)
+1. Open `demo.ipynb` in Colab  (use v6e-1 TPU or v5e-1 TPU)
 2. Run cells top → bottom. Replace system.py with the system.py script in this repo and restart runtime.
 3. Set `HF_REPO_ID` + `CHECKPOINT_SUBDIR` in the “Load checkpoint” cell  
 4. Click **Start** in the streaming widget  
