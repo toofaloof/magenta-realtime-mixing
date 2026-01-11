@@ -1,4 +1,4 @@
-# Magenta RT — Reverb (4) × Low‑Pass Filter (4) Live Demo (Lane‑0 Control)
+# Magenta RT — Reverb × Low‑Pass Filter
 
 A fine‑tuned **Magenta RealTime (Magenta RT)** checkpoint + **Colab notebook** that streams audio generation and lets you **toggle Reverb + Low‑Pass Filter live** on the drum stem.
 
