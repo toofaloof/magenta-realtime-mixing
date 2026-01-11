@@ -1,0 +1,10 @@
+# Minimal local requirements (Colab notebook installs from source).
+# Pinning JAX CUDA builds is environment-specific; see notebook for the Colab path.
+
+tensorflow>=2.15
+tf2jax==0.3.8
+soundfile
+librosa
+ipywidgets
+tqdm
+huggingface_hub
