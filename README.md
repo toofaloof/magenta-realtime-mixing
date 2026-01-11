@@ -2,14 +2,14 @@
 
 A fine‑tuned **Magenta RealTime (Magenta RT)** checkpoint + **Colab notebook** that streams audio generation and lets you **toggle Reverb + Low‑Pass Filter live** on the drum stem.
 
-This project keeps **all control in lane 0** (no extra lanes) to avoid style/control entanglement.
+This is a personal side-project from me and keeps **all control in lane 0** (no extra lanes) to avoid style/control entanglement. It is still not avoidable with this approach. 
 
 ---
 
 ## Quickstart (Colab)
 
-1. Open `demo.ipynb` in Colab  (use v6e-1 TPU since it's tested on there)
-2. Run cells top → bottom  
+1. Open `demo.ipynb` in Colab  (recommend to use v6e-1 TPU since it's tested on there)
+2. Run cells top → bottom. Replace system.py with the system.py script in this repo and restart runtime.
 3. Set `HF_REPO_ID` + `CHECKPOINT_SUBDIR` in the “Load checkpoint” cell  
 4. Click **Start** in the streaming widget  
 5. Use **Reverb** + **LPF** toggles while it plays (applies on the next ~2s chunk)  
@@ -19,7 +19,7 @@ This project keeps **all control in lane 0** (no extra lanes) to avoid style/con
 
 ## Control scheme (single lane)
 
-We use the **unused vocab gap** (after codec vocab, before style vocab):
+I used the vocab gap (after codec vocab, before style vocab):
 
 - `VOCAB_CONTROL_OFFSET = vocab_codec_offset + vocab_codec_size`
 - `control_token = VOCAB_CONTROL_OFFSET + state_id`
@@ -39,7 +39,7 @@ Lane‑0-only control (and keeping lanes 1–5 as real MusicCoCa style tokens) s
 
 ## System patch (required)
 
-The notebook applies a small patch to `magenta_rt/system.py`:
+The notebook applies a small patch to `magenta_rt/system.py`.:
 
 - After `style_tokens_lm` is computed, we do:
   - `style_tokens_lm[0] = self._control_lane0_token` (if set)
@@ -51,14 +51,14 @@ This means:
 
 ---
 
-## 🧪 Alternative attempted approach (token appending)
+## Alternative attempted approach (token appending)
 
-We also tried an approach where control tokens were **appended** to the prompt sequence (extra tokens after context/style).  
-It did **not** work as well as lane‑0 override: the model tended to ignore the appended controls or behave inconsistently.
+Also tried an approach where control tokens were appended to the prompt sequence (extra tokens after context/style).  
+It did not work as well as lane‑0 override: the model tended to ignore the appended controls or behave inconsistently.
 
 ---
 
-## 🏋️ Training data (high level)
+## Training data (high level)
 
 Training used a mixture of:
 
@@ -72,6 +72,7 @@ Training used a mixture of:
 
 - `demo.ipynb` — Colab notebook (install → patch → load checkpoint → live UI)
 - `requirements.txt` — minimal local deps (Colab uses install cells)
+- `setup.py` - patch
 
 ---
 
