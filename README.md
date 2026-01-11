@@ -2,7 +2,7 @@
 
 A fine‑tuned **Magenta RealTime (Magenta RT)** checkpoint + **Colab notebook** that streams audio generation and lets you **toggle Reverb + Low‑Pass Filter live** on the drum stem.
 
-This is a personal side-project from me and keeps **all control in lane 0** (no extra lanes) to avoid style/control entanglement. It is still not avoidable with this approach. 
+This is a personal side-project from me and keeps **all control in lane 0** (no extra lanes) to reduce style/control entanglement, altough it is not totally avoidable.
 
 ---
 
