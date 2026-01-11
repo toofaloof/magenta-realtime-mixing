@@ -8,7 +8,7 @@ This project keeps **all control in lane 0** (no extra lanes) to avoid style/con
 
 ## Quickstart (Colab)
 
-1. Open `demo.ipynb` in Colab  
+1. Open `demo.ipynb` in Colab  (use v6e-1 TPU since it's tested on there)
 2. Run cells top → bottom  
 3. Set `HF_REPO_ID` + `CHECKPOINT_SUBDIR` in the “Load checkpoint” cell  
 4. Click **Start** in the streaming widget  
