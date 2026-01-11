@@ -10,7 +10,7 @@ This is a personal side-project from me and keeps **all control in lane 0** (no 
 
 1. Open `demo.ipynb` in Colab  (use v6e-1 TPU or v5e-1 TPU)
 2. Run cells top → bottom. Replace system.py with the system.py script in this repo and restart runtime.
-3. Set `HF_REPO_ID` + `CHECKPOINT_SUBDIR` in the “Load checkpoint” cell  
+3. Run “Load checkpoint” cell  
 4. Click **Start** in the streaming widget  
 5. Use **Reverb** + **LPF** toggles while it plays (applies on the next ~2s chunk)  
 6. Toggle **record** → click **save wav** to download your recording
